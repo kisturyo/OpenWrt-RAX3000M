@@ -1,4 +1,4 @@
-## CMCC RAX3000M OpenWet
+## OpenWrt RAX3000M
 
 - Github Actions自動編譯
 - 可定制化
