@@ -15,3 +15,4 @@
 
 # Add a feed source
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
+echo "src-git kiddin9 https://github.com/Kisturyo/openwrt-packages.git" >> "feeds.conf.default"
