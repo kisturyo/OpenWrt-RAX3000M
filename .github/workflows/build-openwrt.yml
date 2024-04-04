@@ -79,7 +79,7 @@ jobs:
       run: |
         cd openwrt
         mkdir patches
-        cp -Rf ./patches/* ./patches || true
+        cp -Rf ./patches/* ./patches/ || true
         cp -Rf ./dts/* ./target/linux/mediatek/dts/ || true
         if [ -n "$(ls -A patches/*.bin.patch 2>/dev/null)" ]; then
           git apply devices/${{matrix.target}}/patches/*.bin.patch
