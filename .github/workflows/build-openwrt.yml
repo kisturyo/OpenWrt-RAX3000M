@@ -27,7 +27,9 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  PATCH: patch/
+  PATCH: cmcc_rax3000m.patch
+  DTS_EMMC: mt7981b-cmcc-rax3000m-emmc.dts
+  DTS_NAND: mt7981b-cmcc-rax3000m-nand.dts
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -77,10 +79,11 @@ jobs:
 
     - name: Apply patches
       run: |
+        mkdir openwrt/patches 
+        [ -e $PATCH ] && mv $PATCH openwrt/patches/
+        [ -e $DTS_EMMC ] && mv $DTS_EMMC openwrt/target/linux/mediatek/dts/
+        [ -e $DTS_NAND ] && mv $DTS_NAND openwrt/target/linux/mediatek/dts/
         cd openwrt
-        mkdir patches
-        cp -Rf ./patches/* ./patches/ || true
-        cp -Rf ./dts/* ./target/linux/mediatek/dts/ || true
         if [ -n "$(ls -A patches/*.bin.patch 2>/dev/null)" ]; then
           git apply devices/${{matrix.target}}/patches/*.bin.patch
         fi
