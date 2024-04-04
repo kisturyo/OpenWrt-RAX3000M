@@ -7,7 +7,7 @@
 + Use Argon for defualt theme,simple and beautiful.
 + Auto build and upload to Releases.
 
-IP address:10.0.0.1
+IP address:10.0.0.1 \n
 No password,please set after first start up.
 
 You can fork my repo and build by yourself.
