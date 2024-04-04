@@ -1,6 +1,7 @@
 ## OpenWrt RAX3000M
 
-- 基于OpenWrt最新版本
-- Github Actions自動編譯
-- 訂製化
+- 基于官方OpenWrt，原汁原味
+- Github Actions自動編譯，不用守着電腦
 - 自動上傳至Releases
+
+# 如何使用
