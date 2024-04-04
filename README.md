@@ -24,4 +24,4 @@ You can fork my repo and build by yourself.
 
 ### Acknowledgments
 - [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
-- [BreadcrumbsOpenWrt_x86-r2s-r4s-r5s-N1]([https://github.com/openwrt/openwrt](https://github.com/kiddin9/OpenWrt_x86-r2s-r4s-r5s-N1))
+- [kiddin9](https://github.com/kiddin9/OpenWrt_x86-r2s-r4s-r5s-N1)
