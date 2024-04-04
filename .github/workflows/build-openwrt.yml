@@ -26,6 +26,7 @@ env:
   CONFIG_FILE: latest.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
+  PATCH: patch/
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -71,6 +72,16 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+
+
+    - name: Apply patches
+      run: |
+        cd openwrt
+        if [ -n "$(ls -A patches/*.bin.patch 2>/dev/null)" ]; then
+          git apply devices/${{matrix.target}}/patches/*.bin.patch
+        fi
+        find "./patches" -maxdepth 1 -type f -name '*.revert.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -R -B --merge -p1 -E --forward"
+        find "./patches" -maxdepth 1 -type f -name '*.patch' ! -name '*.revert.patch' ! -name '*.bin.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -B --merge -p1 -E --forward"
 
     - name: Load custom configuration
       run: |
