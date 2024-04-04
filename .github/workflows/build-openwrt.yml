@@ -78,6 +78,8 @@ jobs:
     - name: Apply patches
       run: |
         cd openwrt
+        cp -rn ./patches ./
+        cp -Rf ./dts/* ./target/linux/mediatek/dts/ || true
         if [ -n "$(ls -A patches/*.bin.patch 2>/dev/null)" ]; then
           git apply devices/${{matrix.target}}/patches/*.bin.patch
         fi
