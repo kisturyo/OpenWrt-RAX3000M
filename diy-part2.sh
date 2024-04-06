@@ -18,3 +18,4 @@ sed -i 's/OpenWrt/RAX3000M/g' package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-nginx/Makefile
 # sed -i "s/^.*vermagic$/\techo '1' > \$(LINUX_DIR)\/.vermagic/" include/kernel-defaults.mk
+sed -i "s/<0x580000 0x7200000>/<0x580000 0xee00000>/g" openwrt/target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
