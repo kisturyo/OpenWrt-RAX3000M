@@ -77,6 +77,7 @@ jobs:
     - name: Apply patches
       run: |
         [ -e files ] && mv files openwrt/files
+        [ -e patches ] && mv patches openwrt/patches
         cd openwrt
         find "./patches" -maxdepth 1 -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -B --merge -p1 -E --forward"
 
