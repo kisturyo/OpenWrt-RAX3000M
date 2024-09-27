@@ -17,7 +17,9 @@ You can fork my repo and build by yourself.
 ## Build yourself
 
 - Fork my repository.
-- Generate `.config` files using [OpenWrt]([https://github.com/coolsnowwolf/lede](https://github.com/openwrt/openwrt)) source code.
+- Clone [OpenWrt]([https://github.com/openwrt/openwrt]) source code.
+- Apply patches and run diy scripts to OpenWrt source code.
+- Use `make menuconfig` to Generate `.config` file.
 - Push `.config` file to the GitHub repository.
 - Select `Build OpenWrt` on the Actions page.
 - Click the `Run workflow` button.
