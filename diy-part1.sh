@@ -13,10 +13,9 @@
 # Uncomment a feed source
 # sed -i "/helloworld/d" "feeds.conf.default"
 
-# Add a feed source
-# echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+# Add additional package
+mkdir package/additional
+git clone https://github.com/kiddin9/luci-theme-edge.git package/additional/luci-theme-edge
 
 # Remove kernel version's MD5
 sed -i 's/~$(LINUX_VERMAGIC)-/-/g' include/kernel.mk
